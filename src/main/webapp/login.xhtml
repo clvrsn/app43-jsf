@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title></title>
+</h:head>
+<body>
+	<h:form>
+
+		<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		<p:panel id="panel" header="Autenticar" style="margin-bottom:10px;">
+			<h:panelGrid columns="2" cellpadding="5">
+				<h:outputLabel for="email" value="Email:" />
+				<p:inputText id="email" value="#{loginBean.user.email}" required="true" label="email" />
+
+				<h:outputLabel for="password" value="Password:" />
+				<p:password id="password" value="#{loginBean.user.password}" required="true" label="password" />
+
+
+			</h:panelGrid>
+		</p:panel>
+
+		<p:toolbar>
+			<f:facet name="right">
+				<p:commandButton value="Entrar" update="growl" actionListener="#{loginBean.actionLogin}" />
+			</f:facet>
+		</p:toolbar>
+	</h:form>
+</body>
+</html>
